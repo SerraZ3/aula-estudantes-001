@@ -1,0 +1,158 @@
+type: collection.insomnia.rest/5.0
+name: Questions
+meta:
+  id: wrk_239e7022ea70425cbc863800e77d69cf
+  created: 1734303137598
+  modified: 1734303137598
+collection:
+  - name: Students
+    meta:
+      id: fld_afa82b8b198a44d8a55abb64c785a0ac
+      created: 1734303149371
+      modified: 1746627764893
+      sortKey: -1734303149371
+    children:
+      - url: http://localhost:3000/v1/students
+        name: Create
+        meta:
+          id: req_27f72e71d21c4917813b77307ffcea5f
+          created: 1734303153645
+          modified: 1746630857595
+          isPrivate: false
+          sortKey: -1734303153645
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"fullname": "Henrique Serra",
+            	"birthdate": "11/10/1999",
+            	"cpf": "814.939.443-55"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/v1/students/4
+        name: Show
+        meta:
+          id: req_040ced1a284c4bf2b105203d4aa82c69
+          created: 1734318211156
+          modified: 1746630025237
+          isPrivate: false
+          sortKey: -1733480631465
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/v1/students
+        name: List
+        meta:
+          id: req_9c387f8afd6f45fc9410545d4a478414
+          created: 1734318522238
+          modified: 1746629718528
+          isPrivate: false
+          sortKey: -1733069370375
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/v1/students/5
+        name: Update
+        meta:
+          id: req_6648326055ea48219c7c2717371f2045
+          created: 1734318728397
+          modified: 1746630501436
+          isPrivate: false
+          sortKey: -1733891892555
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"fullname": "Henrique Serra",
+            	"birthdate": "11/10/1999"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/v1/students/4
+        name: Delete
+        meta:
+          id: req_b21d7897206647eba22b0236b8a78fcd
+          created: 1734319073099
+          modified: 1746630035697
+          isPrivate: false
+          sortKey: -1733275000920
+        method: DELETE
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c3b50dc05ca88c3dcaeaba6a944aeb8c98f33055
+    created: 1734303137606
+    modified: 1734303137606
+environments:
+  name: Base Environment
+  meta:
+    id: env_c3b50dc05ca88c3dcaeaba6a944aeb8c98f33055
+    created: 1734303137603
+    modified: 1734303137603
+    isPrivate: false
