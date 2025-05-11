@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run migrate && DEBUG=*:dev,app:*,*:server node src/app.js",
-    "dev": "DEBUG=*:dev,app:*,*:server ./node_modules/.bin/nodemon ./src/app.js",
-    "migrate": "node_modules/.bin/sequelize db:migrate",
-    "undoMigrate": "node_modules/.bin/sequelize db:migrate:undo:all",
-    "seed": "node_modules/.bin/sequelize db:seed:all",
-    "undoSeed": "node_modules/.bin/sequelize db:seed:undo:all"
+    "start": "npm run migrate && cross-env DEBUG=*:dev,app:*,*:server node src/app.js",
+    "dev": "cross-env DEBUG=*:dev,app:*,*:server nodemon ./src/app.js",
+    "migrate": "sequelize db:migrate",
+    "undoMigrate": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all",
+    "undoSeed": "sequelize db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +33,7 @@
     "uuid": "^11.0.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.7"
   }
 }
