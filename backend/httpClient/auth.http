@@ -26,17 +26,11 @@ Content-Type: application/json
 }
 ###
 
-PUT {{url}}/students/1
+
+POST {{url}}/reset-password
 Content-Type: application/json
 
 {
- "fullname": "henrique", 
- "birthdate": "11/10/1999",
- "cpf": "347.728.870-08"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDcxODY1OTcsImV4cCI6MTc0NzQ0NTc5Nywic3ViIjoiMSJ9.uqtje-RcQWBC-MNSU_vMBMrW2nnMvQTJVmVHflqBwkE",
+    "password": "batatinha123"
 }
-
-###
-
-DELETE  {{url}}/students/1
-Content-Type: application/json
-
