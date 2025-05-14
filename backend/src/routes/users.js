@@ -5,7 +5,7 @@ import {
   getController,
   listController,
   updateController,
-} from '../controllers/users/UserController.js';
+} from '../controllers/user/UserController.js';
 
 const demandRouter = express.Router();
 

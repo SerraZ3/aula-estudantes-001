@@ -1,5 +1,11 @@
 import express from 'express';
-import { createController, deleteController, getController, listController, updateController } from '../controllers/students/StudentController.js';
+import {
+  createController,
+  deleteController,
+  getController,
+  listController,
+  updateController,
+} from '../controllers/student/StudentController.js';
 const demandRouter = express.Router();
 
 //   CRUD

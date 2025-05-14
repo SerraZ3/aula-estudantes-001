@@ -1,24 +1,33 @@
-import { sign } from 'jsonwebtoken';
-import authConfig from '../../config/auth';
-
+import models from '../../database/models/index.cjs';
+const { User } = models;
+import jsonwebtoken from 'jsonwebtoken';
+import authConfig from '../../config/auth.js';
+import hash from '../../libs/hash.js';
+import Debug from 'debug';
+const debug = Debug('loginService:dev');
 async function loginService({ email, password }) {
-  const user = await Student.findOne({ where: { email } });
+  try {
+    debug('Start');
+    const user = await User.findOne({ where: { email } });
 
-  if (!user) {
-    throw new Error('Usuário não encontrado');
+    if (!user) {
+      return { error: true, message: 'Usuário não encontrado' };
+    }
+
+    const passwordMatched = await hash.compareHash(password, user.password);
+    if (!passwordMatched) {
+      return { error: true, message: 'Senha incorreta' };
+    }
+    const { secret, expiresIn } = authConfig.jwt;
+
+    const token = jsonwebtoken.sign({}, secret, {
+      subject: `${user.id}`,
+      expiresIn,
+    });
+
+    return { success: true, user, token };
+  } catch (error) {
+    return { error: true, message: 'Erro ao realizar login' };
   }
-
-  const passwordMatched = await hash.compareHash(password, user.password);
-  if (!passwordMatched) {
-    throw new Error('Senha incorreta');
-  }
-  const { secret, expiresIn } = authConfig.jwt;
-
-  const token = sign({}, secret, {
-    subject: `${user._id}`,
-    expiresIn,
-  });
-
-  return { success: true, user, token };
 }
 export default loginService;
