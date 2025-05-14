@@ -1,0 +1,38 @@
+@url = http://localhost:3333/v1
+
+POST {{url}}/students
+Content-Type: application/json
+
+{
+ "fullname": "henrique", 
+ "birthdate": "11/10/1999", 
+ "cpf": "898.825.970-09"
+}
+
+###
+
+GET {{url}}/students
+Content-Type: application/json
+
+###
+
+GET {{url}}/students/1
+Content-Type: application/json
+
+
+###
+
+PUT {{url}}/students/1
+Content-Type: application/json
+
+{
+ "fullname": "henrique", 
+ "birthdate": "11/10/1999",
+ "cpf": "347.728.870-08"
+}
+
+###
+
+DELETE  {{url}}/students/1
+Content-Type: application/json
+

@@ -3,12 +3,12 @@ import LoginTemplate from "../../../components/templates/LoginTemplate";
 
 // import { Container } from './styles';
 
-function ResetPassword() {
+function Login() {
   return (
     <LoginTemplate>
-      <h1>ResetPassword</h1>
+      <h1>Login</h1>
     </LoginTemplate>
   );
 }
 
-export default ResetPassword;
+export default Login;

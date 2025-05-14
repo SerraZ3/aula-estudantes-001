@@ -1,6 +1,6 @@
 import models from '../../database/models/index.cjs';
 const { Student } = models;
-import cpfValidator from '../../lib/cpfValidator.js';
+import cpfValidator from '../../libs/cpfValidator.js';
 import Debug from 'debug';
 const debug = Debug('createService:dev');
 
