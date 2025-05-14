@@ -6,6 +6,7 @@ import {
   listController,
   updateController,
 } from '../controllers/student/StudentController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 const demandRouter = express.Router();
 
 //   CRUD
@@ -15,14 +16,14 @@ const demandRouter = express.Router();
 // * DELETE - Deletar
 
 // CREATE
-demandRouter.post('/', createController);
+demandRouter.post('/', authMiddleware(['admin']), createController);
 // READ - SHOW
-demandRouter.get('/:id', getController);
+demandRouter.get('/:id', authMiddleware(['admin']), getController);
 // READ - LIST
-demandRouter.get('/', listController);
+demandRouter.get('/', authMiddleware(['admin']), listController);
 // UPDATE
-demandRouter.put('/:id', updateController);
+demandRouter.put('/:id', authMiddleware(['admin']), updateController);
 // DELETE
-demandRouter.delete('/:id', deleteController);
+demandRouter.delete('/:id', authMiddleware(['admin']), deleteController);
 
 export default demandRouter;
