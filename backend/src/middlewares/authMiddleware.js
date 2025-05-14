@@ -9,7 +9,6 @@ function authMiddleware(roles) {
   const handleAuth = async (req, res, next) => {
     debug('Executando');
     const authHeader = req.headers.authorization;
-    debug('header'), authHeader;
 
     if (!authHeader) {
       return res.status(401).json({ error: true, message: 'Sem permissão' });
@@ -28,7 +27,6 @@ function authMiddleware(roles) {
       let hasRole = false;
       try {
         let user = await User.findOne({ where: { id: sub } });
-        debug(user);
         for (let i = 0; i < roles.length; i++) {
           const role = roles[i];
           if (user.role === role) {
