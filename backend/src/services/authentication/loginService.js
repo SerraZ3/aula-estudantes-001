@@ -11,7 +11,7 @@ async function loginService({ email, password }) {
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      return { error: true, message: 'Usuário não encontrado' };
+      return { error: true, message: 'Email ou senha inválido' };
     }
 
     const passwordMatched = await hash.compareHash(password, user.password);
@@ -20,10 +20,16 @@ async function loginService({ email, password }) {
     }
     const { secret, expiresIn } = authConfig.jwt;
 
-    const token = jsonwebtoken.sign({}, secret, {
-      subject: `${user.id}`,
-      expiresIn,
-    });
+    const token = jsonwebtoken.sign(
+      {
+        teste: `${user.id}`,
+      },
+      secret,
+      {
+        subject: `${user.id}`,
+        expiresIn,
+      },
+    );
 
     return { success: true, user, token };
   } catch (error) {

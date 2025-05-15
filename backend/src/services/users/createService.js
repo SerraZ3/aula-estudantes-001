@@ -11,7 +11,6 @@ async function createService({ fullname, role, email, password }) {
 
     // Busca por email
     const user = await User.findOne({ where: { email } });
-
     // Se existir o email gera erro
     if (user) {
       return { error: true, message: 'Email already exist!' };

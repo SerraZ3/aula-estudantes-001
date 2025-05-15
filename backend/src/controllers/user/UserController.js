@@ -20,13 +20,16 @@ export async function getController(req, res, next) {
   debug('user getController');
 
   const { id } = req.params;
+
   const data = await showService({ id });
   return res.json(data);
 }
 
 export async function listController(req, res, next) {
   debug('user listController');
-
+  const { teste } = req.query;
+  debug(teste);
+  // users/:id
   const { id } = req.params;
   const data = await listService({ id });
   return res.json(data);
@@ -36,8 +39,8 @@ export async function updateController(req, res, next) {
   debug('user updateController');
 
   const { id } = req.params;
-  const { fullname, birthdate, cpf } = req.body;
-  const data = await updateService({ id, fullname, birthdate, cpf });
+  const { fullname, role, email, password } = req.body;
+  const data = await updateService({ id, fullname, role, email, password });
   return res.json(data);
 }
 

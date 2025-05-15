@@ -31,13 +31,14 @@ function authMiddleware(roles) {
           const role = roles[i];
           if (user.role === role) {
             hasRole = true;
+            continue;
           }
         }
       } catch (error) {
         console.log(error);
       }
       if (!hasRole) {
-        return res.status(403).json({ error: true, message: 'Sem permissão' });
+        return res.status(401).json({ error: true, message: 'Sem permissão' });
       }
     }
 

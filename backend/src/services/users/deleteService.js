@@ -17,7 +17,7 @@ async function deleteService({ id }) {
     await User.destroy({ where: { id }, transaction: trx });
 
     await trx.commit();
-    return { success: true, data: 'Estudante desativado' };
+    return { success: true, data: 'Usuário desativado' };
   } catch (error) {
     await trx.rollback();
     debug('Error:', error);

@@ -10,7 +10,7 @@ async function listService({}) {
     const users = await User.findAll();
 
     if (!users) {
-      return { error: true, message: 'Nenhum usuário encontrado encontrada' };
+      return { error: true, message: 'Nenhum usuário encontrado' };
     }
 
     return { success: true, data: users };

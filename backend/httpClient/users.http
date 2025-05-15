@@ -6,7 +6,7 @@ Content-Type: application/json
 {
    "fullname": "Henrique Admin",
     "role": "admin",
-    "email": "serra.henrique3@gmail.com",
+    "email": "serra.henrique1@gmail.com",
     "password": "batatinha123"
 }
 
@@ -23,13 +23,13 @@ Content-Type: application/json
 
 ###
 
-PUT {{url}}/users/1
+PUT {{url}}/users/2
 Content-Type: application/json
 
 {
     "fullname": "Henrique Admin",
     "role": "admin",
-    "email": "serra.henrique1@gmail.com",
+    "email": "serra.henrique2@gmail.com",
     "password": "batatinha1234"
 }
 
