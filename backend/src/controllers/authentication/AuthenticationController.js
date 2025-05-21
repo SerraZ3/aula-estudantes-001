@@ -15,7 +15,13 @@ export async function loginController(req, res, next) {
 
 export async function checkLoginController(req, res, next) {
   debug('user checkLoginController');
-  const { token } = req.body;
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    return res.status(401).json({ error: true, message: 'Sem permissão' });
+  }
+
+  const [, token] = authHeader.split(' ');
 
   const data = await checkLoginService({ token });
 

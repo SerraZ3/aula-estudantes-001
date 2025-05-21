@@ -1,5 +1,5 @@
 @url = http://localhost:3333/v1
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXN0ZSI6IjIiLCJpYXQiOjE3NDcyNzEwNjQsImV4cCI6MTc0NzI3NDY2NCwic3ViIjoiMiJ9.RLDSvaEi7bd9sLl2c735FRtQIrOXZcTwpfka5boBEeE
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXN0ZSI6IjEiLCJpYXQiOjE3NDc4NTUxMzYsImV4cCI6MTc0Nzg1ODczNiwic3ViIjoiMSJ9.dDpnIYgIAMoabxcjFF3JLqIOecONLYzbPO9BNaMFYuc
 
 POST {{url}}/students
 Authorization: Bearer {{authToken}}

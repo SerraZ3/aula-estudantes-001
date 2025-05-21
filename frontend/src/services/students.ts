@@ -6,12 +6,16 @@ const studentsService = {
     return response.data;
   },
   update: async (id: string, data: any) => {
-    console.log(id, data)
+    console.log(id, data);
     let response = await api.put('/students/' + id, { ...data });
     return response.data;
   },
   list: async () => {
     let response = await api.get('/students');
+    return response.data;
+  },
+  show: async (id: string) => {
+    let response = await api.get('/students/' + id);
     return response.data;
   },
   delete: async (id: string) => {

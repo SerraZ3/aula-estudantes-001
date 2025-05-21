@@ -8,7 +8,7 @@ async function updateService({ id, fullname, role, email, password }) {
   const trx = await models.sequelize.transaction();
 
   try {
-    debug('Start', fullname, role, email);
+    debug('Start', fullname, role, email, password);
     const user = await User.findOne({ where: { id } });
 
     // Se não existir o estudante gera erro

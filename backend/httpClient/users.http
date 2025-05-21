@@ -23,14 +23,13 @@ Content-Type: application/json
 
 ###
 
-PUT {{url}}/users/2
+PUT {{url}}/users/1
 Content-Type: application/json
 
 {
-    "fullname": "Henrique Admin",
+    "fullname": "Henrique User",
     "role": "admin",
-    "email": "serra.henrique2@gmail.com",
-    "password": "batatinha1234"
+    "password": "12345678"
 }
 
 ###

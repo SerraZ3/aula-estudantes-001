@@ -27,8 +27,6 @@ export async function getController(req, res, next) {
 
 export async function listController(req, res, next) {
   debug('user listController');
-  const { teste } = req.query;
-  debug(teste);
   // users/:id
   const { id } = req.params;
   const data = await listService({ id });

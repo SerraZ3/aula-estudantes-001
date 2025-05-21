@@ -5,7 +5,7 @@ import listService from '../../services/students/listService.js';
 import showService from '../../services/students/showService.js';
 import deleteService from '../../services/students/deleteService.js';
 import updateService from '../../services/students/updateService.js';
-const debug = Debug('Controller:dev');
+const debug = Debug('StudentController:dev');
 
 export async function createController(req, res, next) {
   debug('createController');

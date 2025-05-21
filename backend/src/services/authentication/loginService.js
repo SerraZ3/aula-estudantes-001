@@ -8,6 +8,7 @@ const debug = Debug('loginService:dev');
 async function loginService({ email, password }) {
   try {
     debug('Start');
+    console.log(email, password);
     const user = await User.findOne({ where: { email } });
 
     if (!user) {

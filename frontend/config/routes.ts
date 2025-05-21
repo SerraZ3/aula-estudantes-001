@@ -11,7 +11,6 @@
  * @doc https://umijs.org/docs/guides/routes
  */
 export default [
-
   {
     path: '/users',
     name: 'Usuários',
@@ -31,7 +30,15 @@ export default [
     name: 'Perfil',
     icon: 'appstoreAddOutlined',
     component: './User/Profile',
-    access:[ 'canUser', 'canAdmin'],
+    access: ['canUser', 'canAdmin'],
+  },
+  {
+    path: '/student/:id',
+    name: 'Estudante',
+    icon: 'appstoreAddOutlined',
+    component: './User/Student',
+    hideInMenu: true,
+    access: ['canAdmin'],
   },
   {
     path: '/login',
@@ -57,7 +64,12 @@ export default [
     name: 'Redefinir Senha',
     component: './ResetPassword',
   },
-
+  {
+    path: '/pdf-viewer',
+    name: 'Visualizador PDF',
+    hideInMenu: true,
+    component: './PdfViewer',
+  },
   {
     path: '/',
     layout: false,

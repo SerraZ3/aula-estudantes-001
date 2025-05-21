@@ -12,6 +12,7 @@ import {
   ProFormText,
   ProTable,
 } from '@ant-design/pro-components';
+import { history } from '@umijs/max';
 import { Button, Card, Form, message, Space, Tag, Typography } from 'antd';
 import React, { useRef, useState } from 'react';
 
@@ -73,6 +74,14 @@ const columns: ProColumns<DataItem>[] = [
         }}
       >
         Editar
+      </a>,
+      <a
+        key="editable"
+        onClick={() => {
+          history.push('/student/' + record.id);
+        }}
+      >
+        Visualizar
       </a>,
     ],
   },
